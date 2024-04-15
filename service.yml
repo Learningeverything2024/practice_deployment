@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeapp-service
+spec:
+  selector:
+    app: nodeapp
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 3000
+    nodeport: 31110
+    
+# I am using minikube for deployment
+# kubectl get pods
+# kubectl get deplyoment
+# kubectl get svc
+# kubectl apply -f deployment.yml 
+# kubectl apply -f service.yml
+# minikube service nodeapp-service
